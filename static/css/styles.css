@@ -5,11 +5,108 @@ body{
     font-family: system-ui;
 }
 .logo{
-    margin: 0 auto;
+    margin: 0 auto 2em;
     display: block;
+}
+.navigation{
+    /* transform-origin: left bottom; */
+    writing-mode: vertical-lr; /*Cambiamos el sentido del elemento a vertical*/
+    transform:rotate(180deg);
+    position: absolute;
+    left: 2em;
+    height: calc(100vh - 8em);
+    text-transform: uppercase;
+    bottom: 0;
+    text-align: center;
+    border: 1px solid red;
+    display: flex;
+    justify-content: space-between;
+    padding: 4em 0;
+}
+.navigation .text{
+    display:inline-flex;
+    margin : 35px 0;
+}
+/* .links{
+
+} */
+.dot{
+    width: 10px;
+    height: 10px;
+    background: black;
+    border-radius: 50%;
+    display: inline-flex;
+    margin: 10px 0;
+}
+.line{
+    width: 2px;
+    height: 150px;
+    background: black;
+    display: inline-flex;
+    margin:15px 0;
 }
 .wrapper{
     max-width: 1280px;
     margin: auto;
     padding: 0 2em;
+}
+.character{
+    text-align: center;
+}
+.character-image{
+    max-width: 100%;
+    border-radius: 50%;
+}
+.character-name{
+    font-size: 30px;
+}
+.character-labels{
+    max-width: 300px;
+}
+.character-label{
+    background: #685128;
+    padding: 1em;
+    color:white;
+    border-radius: 10px;
+    text-align: left;
+    font-size: 25px;
+    font-weight: 400;
+    /* display: inline-flex; */
+}
+
+@media screen and (min-width:1024px){
+    .character-grid{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "name avatar" "labels avatar";
+    }
+    .character-name{
+        text-align: left;
+        grid-area: name;
+    }
+    .character-name h2{
+        text-align: left;
+        font-size: 50px;
+        position: relative;
+        display: inline-flex;
+    }
+    .character-name h2:after{
+        content: "";
+        width:87px;
+        height: 6px;
+        background: #f7391c;
+        display:inline-flex;
+        position:absolute;
+        top:60%;
+        left:calc(100% + 5px);
+    }
+    .character-image{
+        grid-area: avatar;
+        width: 300px;
+        border-radius: 50%;
+    }
+    .character-labels{
+        grid-area: labels;
+        max-width: 300px;
+    }
 }

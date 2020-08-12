@@ -30,8 +30,8 @@ class Character{
 }
 async function initApp(initCharacterID){
     const characterData=await api.getCharacter(initCharacterID);
-    // console.log(characterData);
-    new Character(characterData);
+    console.log(characterData);
+    // new Character(characterData);
 }
 initApp(1);
 // api.getCharacter(1);
