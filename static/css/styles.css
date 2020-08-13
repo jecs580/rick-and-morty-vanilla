@@ -7,8 +7,52 @@ body{
 .logo{
     margin: 0 auto 2em;
     display: block;
+    grid-area: logo;
 }
+.grid{
+    display: grid;
+    height: 100vh;
+    padding: 4em;
+    grid-template-columns: 50px 1fr 1fr 200px;
+    grid-template-rows: 312px 120px 1fr 1fr;
+    grid-column-gap: 8em;
+    grid-template-areas: " asset-top logo logo social" "name character-name avatar avatar" "about character-description avatar avatar" "asset-bottom learn-more arrow linea-horizontal";
+}
+.asset.top{
+    grid-area: asset-top;
+    writing-mode: vertical-lr;
+    border: 1px solid red;
+    display: flex;
+    align-items: center;
+}
+.social{
+    grid-area: social;
+    border: 1px solid red;
+}
+.navigation-name{
+    grid-area: name;
+    writing-mode: vertical-rl;
+    transform:rotate(180deg);
+    display: flex;
+    align-items: center;
+    border: 1px solid blue;
+    justify-content: center;
+}
+.navigation-name a{
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+    font-size: 25px;
+}
+.character-name-container{
+    border: 1px solid red;
+    display: flex;
+    align-items: center;
+    padding-inline-start: 1em;
+}
+    
 .navigation{
+    
     /* transform-origin: left bottom; */
     writing-mode: vertical-lr; /*Cambiamos el sentido del elemento a vertical*/
     transform:rotate(180deg);
@@ -22,6 +66,7 @@ body{
     display: flex;
     justify-content: space-between;
     padding: 4em 0;
+    display: none;
 }
 .navigation .text{
     display:inline-flex;
