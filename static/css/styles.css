@@ -4,6 +4,9 @@ body{
     background: #00a5be;
     font-family: system-ui;
     overflow-x: hidden;
+    background-image: url("../img/asset-red.svg");
+    background-repeat: no-repeat;
+    background-position: top left 240px;
 }
 .logo{
     margin: 0 auto 2em;
@@ -163,6 +166,17 @@ body{
 .character-name{
     /* grid-area: character-name; */
     font-size: 30px;
+    position: relative;
+}
+.character-name h2:after{
+    content: "";
+    width:87px;
+    height: 6px;
+    background: #f7391c;
+    display:inline-flex;
+    position:absolute;
+    top:53%;
+    left:calc(100% + 5px);
 }
 .character-labels{
     max-width: 300px;
@@ -237,6 +251,9 @@ body{
     }
 }
 @media screen and (max-width:1024px){
+    body{
+        background-position: top left 70px;
+    }
     .character-labels{
         max-width: 100%;
     }
