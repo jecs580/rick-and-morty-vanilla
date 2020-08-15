@@ -1,6 +1,6 @@
 body{
     margin: 0;
-    padding: 0;
+    /* padding: 0; */
     background: #00a5be;
     font-family: system-ui;
     overflow-x: hidden;
@@ -21,7 +21,7 @@ body{
     padding: 4em;
     grid-column-gap: 8em;
     grid-template-columns: 50px 1fr 1fr 200px;
-    grid-template-rows: 230px 100px 1fr 1fr 1fr;
+    grid-template-rows: 230px 100px 1fr 96px 96px;
     grid-template-areas: " asset-top logo logo social" "name character-name avatar avatar" "about character-description avatar avatar" "asset-bottom character-text avatar avatar" "asset-bottom learn-more arrow linea-horizontal";
 }
 .character-image-container{
@@ -57,7 +57,7 @@ body{
     background-position: left 170px bottom 5px;
 }
 .asset{
-    writing-mode: vertical-lr;
+    writing-mode: vertical-rl;
     display: flex;
     align-items: center;
 }
@@ -149,7 +149,8 @@ body{
     height: 150px;
     background: black;
     display: inline-flex;
-    margin:15px 0;
+    /* margin:15px 0; */
+    margin-inline: 15px;
 }
 .wrapper{
     max-width: 1280px;
@@ -252,10 +253,13 @@ body{
     z-index: 1;
 }
 /* @media screen and (max-width:1650px){  */
-@media screen and (max-width:1440px){ 
+@media screen and (max-width:1640px){ 
    
     .grid{
         column-gap: 2em;
+    }
+    .learn-more{
+        background-size: 100px;
     }
 }
 @media screen and (max-width:1024px){
