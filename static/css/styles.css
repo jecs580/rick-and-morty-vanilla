@@ -228,6 +228,14 @@ body{
         max-width: 300px;
     }
 } */
+.placeholder-container{
+    overflow: hidden;
+    position:fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+}
 .character-name-placeholder{
     color: rgba(0, 0, 0, .1);
     font-size: 500px;
@@ -272,6 +280,10 @@ body{
     }
     .character-name{
         text-align: center;
+    }
+    .character-name h2:after{
+        top: 100%;
+        left: 30%;
     }
     .logo{
         max-width: 100%;
