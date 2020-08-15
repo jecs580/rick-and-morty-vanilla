@@ -13,28 +13,34 @@ body{
     display: grid;
     height: calc(100vh - 8em);
     padding: 4em;
+    grid-column-gap: 8em;
     grid-template-columns: 50px 1fr 1fr 200px;
     grid-template-rows: 230px 100px 1fr 1fr 1fr;
-    grid-column-gap: 8em;
     grid-template-areas: " asset-top logo logo social" "name character-name avatar avatar" "about character-description avatar avatar" "asset-bottom character-text avatar avatar" "asset-bottom learn-more arrow linea-horizontal";
 }
 .character-image-container{
     grid-area: avatar;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.arrow{
+.arrow-container{
     grid-area: arrow;
-    border: 1px solid red;
+}
+.arrow{
+    display: flex;
+    height: 100%;
+    width: 40px;
+    /* border: 1px solid red; */
     background-image: url("../img/arrow.svg");
     background-repeat: no-repeat;
     background-position: left bottom;
+    cursor: pointer;
 }
 .learn-more{
     grid-area: learn-more;
-    border: 1px solid orange;
+    /* border: 1px solid orange; */
     display: flex;
     align-items: flex-end;
     font-size: 25px;
@@ -50,21 +56,22 @@ body{
 }
 .asset.top{
     grid-area: asset-top;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 .asset.bottom{
     grid-area: asset-bottom;
-    border: 1px solid green;
+    /* border: 1px solid green; */
     justify-content: flex-end;
 }
 .social{
     grid-area: social;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     display: flex;
     justify-content: flex-start;
 }
 .social a{
     padding-right: 10px;
+    text-decoration: none;
 }
 .social a:last-child{
     padding-right: 0;
@@ -77,12 +84,12 @@ body{
     justify-content: center;
 }
 .navigation.name{
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     grid-area: name;
 }
 .navigation.about{
     grid-area: about;
-    border: 1px solid purple;
+    /* border: 1px solid purple; */
 }
 .navigation a{
     text-decoration: none;
@@ -91,10 +98,11 @@ body{
     font-size: 25px;
 }
 .character-name-container{
-    border: 1px solid red;
+    /* border: 1px solid red; */
     display: flex;
     align-items: center;
     padding-inline-start: 1em;
+    grid-area: character-name;
 }
 .character-description-container{
     grid-area:character-description;
@@ -122,8 +130,8 @@ body{
 
 } */
 .dot{
-    width: 7px;
-    height: 7px;
+    width: 10px;
+    height: 10px;
     background: black;
     border-radius: 50%;
     display: inline-flex;
@@ -149,6 +157,7 @@ body{
     border-radius: 50%;
 }
 .character-name{
+    /* grid-area: character-name; */
     font-size: 30px;
 }
 .character-labels{
@@ -165,7 +174,7 @@ body{
     /* display: inline-flex; */
 }
 
-@media screen and (min-width:1024px){
+/* @media screen and (min-width:1024px){
     .character-grid{
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -200,4 +209,59 @@ body{
         grid-area: labels;
         max-width: 300px;
     }
+} */
+/* @media screen and (max-width:1650px){  */
+@media screen and (max-width:1440px){ 
+   
+    .grid{
+        column-gap: 2em;
+    }
 }
+@media screen and (max-width:1024px){
+    .character-labels{
+        max-width: 100%;
+    }
+    .grid{
+        height: auto;
+        padding:2em 0;
+        width: calc(100vw - 2em);
+        margin: 0 auto;
+        column-gap: 1em;
+        grid-template-columns: 50px 1fr  1fr;
+        grid-template-rows: repeat(6,auto);
+        grid-template-areas: " logo logo logo" "name avatar avatar" "name character-name character-name" "about character-description character-description" "arrow arrow arrow" "social social social";
+    }
+    .asset{
+        display: none;
+    }
+    .character-name{
+        text-align: center;
+    }
+    .logo{
+        max-width: 100%;
+    }
+    .character-name-container{
+        justify-content: center;
+        margin-top:1em;
+    }
+    .learn-more{
+        display: none;
+        padding-inline-start: 1em;
+    }
+    .arrow-container{
+        display: flex;
+        justify-content: center;
+        height: 40px;
+    }
+    .social{
+        text-align:center;
+        display: block;
+        margin-top: 2em;
+    }
+    .social a{
+        margin-left: 2em;
+    }
+    .social a:first-child{
+        margin-left:0;
+    }
+} 
