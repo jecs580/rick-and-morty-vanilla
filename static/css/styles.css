@@ -3,6 +3,7 @@ body{
     padding: 0;
     background: #00a5be;
     font-family: system-ui;
+    overflow-x: hidden;
 }
 .logo{
     margin: 0 auto 2em;
@@ -10,6 +11,8 @@ body{
     grid-area: logo;
 }
 .grid{
+    position: relative;
+    z-index: 2;
     display: grid;
     height: calc(100vh - 8em);
     padding: 4em;
@@ -27,6 +30,7 @@ body{
 }
 .arrow-container{
     grid-area: arrow;
+    user-select: none;
 }
 .arrow{
     display: flex;
@@ -210,6 +214,21 @@ body{
         max-width: 300px;
     }
 } */
+.character-name-placeholder{
+    color: rgba(0, 0, 0, .1);
+    font-size: 500px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-transform: uppercase;
+    white-space:nowrap;
+    z-index: 1;
+}
 /* @media screen and (max-width:1650px){  */
 @media screen and (max-width:1440px){ 
    
